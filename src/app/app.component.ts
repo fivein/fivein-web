@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fivein-web';
+
+  ngOnInit(): void {
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('mat-app-background');
+  }
 }

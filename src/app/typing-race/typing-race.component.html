@@ -1,8 +1,10 @@
-<div class="container">
-  <app-typing-passage></app-typing-passage>
-  <p>
-    typing-race works!
-  </p>
+<div class="container main-container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <app-typing-passage [passage]="passage" [typingField]="typingField" (clearField)="clearEvent($event)"></app-typing-passage>
+      <mat-form-field class="full-width typing-form-field" appearance="outline">
+        <input matInput [(ngModel)]="typingField" class="typing-field">
+      </mat-form-field>
+    </div>
+  </div>
 </div>
-
-
