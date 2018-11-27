@@ -4,6 +4,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PassageService {
+  defaultPassage: String = 'Bacon ipsum dolor amet kevin frankfurter biltong, pastrami chuck ribeye beef ribs burgdoggen.'
+    + ' Bacon porchetta doner, ham hock bresaola pastrami spare ribs.'
+    + ' Doner turkey tongue, chicken spare ribs shankle ribeye cupim t-bone shank. Turkey filet mignon spare ribs fatback.'
+    + ' Ground round cupim swine pork kevin. Meatloaf alcatra meatball picanha jerky, pancetta venison.'
+    + '\n' + 'Doner venison sirloin, leberkas pork belly ham jerky andouille kielbasa boudin.'
+    + ' Brisket jerky fatback, kevin buffalo short loin boudin prosciutto leberkas picanha andouille tri-tip.'
+    + ' Cupim strip steak capicola ground round swine.'
+    + ' Tri-tip sirloin biltong cow filet mignon landjaeger tail capicola pastrami shoulder t-bone strip steak ham shankle.'
+    + ' Shank tail pancetta porchetta.';
 
   constructor() { }
+
+  getDefaultPassage() {
+    return this.defaultPassage;
+  }
+
+  getPassage(): String {
+    return this.getDefaultPassage();
+  }
 }

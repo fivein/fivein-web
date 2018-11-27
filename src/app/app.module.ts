@@ -9,20 +9,24 @@ import {
   MatCardModule,
   MatDividerModule, MatFormFieldModule,
   MatIconModule, MatInputModule,
-  MatMenuModule,
+  MatMenuModule, MatProgressBarModule,
   MatToolbarModule
 } from '@angular/material';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TypingRaceComponent } from './typing-race/typing-race.component';
 import { TypingPassageComponent } from './typing-passage/typing-passage.component';
 import { FormsModule } from '@angular/forms';
+import { TypingProgressComponent } from './typing-progress/typing-progress.component';
+import { TypingProgressBarComponent } from './typing-progress-bar/typing-progress-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     TypingRaceComponent,
-    TypingPassageComponent
+    TypingPassageComponent,
+    TypingProgressComponent,
+    TypingProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
+import { PassageService } from '../passage.service';
 
 @Component({
   selector: 'app-typing-passage',
@@ -6,26 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
   styleUrls: ['./typing-passage.component.sass']
 })
 export class TypingPassageComponent implements OnInit {
-  @Input() passage: [[String, number]];
-  @Input() typingField: String;
-  @Output() clearField = new EventEmitter<boolean>();
-  currentIndex = 0;
+  @Input() passage: String;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private passageService: PassageService) {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    const field: String = changes.typingField.currentValue;
-    if (field[field.length  - 1] !== ' ') {
-      return;
-    }
-
-    if (this.passage[this.currentIndex][0] === field.trim()){
-      this.typingField = '';
-      this.currentIndex++;
-      this.clearField.emit(true);
-    }
+  ngOnInit() {
   }
 }
