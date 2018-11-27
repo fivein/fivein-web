@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatChipsModule,
   MatDividerModule, MatFormFieldControl, MatFormFieldModule,
   MatIconModule, MatInputModule,
   MatMenuModule, MatProgressBarModule,
@@ -38,6 +38,7 @@ import { TypingProgressBarComponent } from './typing-progress-bar/typing-progres
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatChipsModule,
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,

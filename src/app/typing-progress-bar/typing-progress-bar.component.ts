@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-typing-progress-bar',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./typing-progress-bar.component.sass']
 })
 export class TypingProgressBarComponent implements OnInit {
+  @Input() value: Number;
+  @Input() prediction: Number;
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }
