@@ -11,5 +11,4 @@ export class TypingProgressComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

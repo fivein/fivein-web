@@ -1,10 +1,15 @@
 <div class="container main-container">
   <div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="col-md-8 typing-race-card mat-elevation-z2">
       <app-typing-progress></app-typing-progress>
       <app-typing-passage [passage]="passage"></app-typing-passage>
       <mat-form-field class="full-width typing-form-field" appearance="outline">
-        <input matInput [(ngModel)]="typingField" class="typing-field">
+        <input
+          class="typing-field"
+          #typingField
+          [formControl]="typingFieldControl"
+          [placeholder]="typingFieldPlaceholder"
+          matInput>
       </mat-form-field>
     </div>
   </div>

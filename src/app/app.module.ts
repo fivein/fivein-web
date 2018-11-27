@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatCardModule,
-  MatDividerModule, MatFormFieldModule,
+  MatDividerModule, MatFormFieldControl, MatFormFieldModule,
   MatIconModule, MatInputModule,
   MatMenuModule, MatProgressBarModule,
   MatToolbarModule
@@ -15,7 +15,7 @@ import {
 import { NavbarComponent } from './navbar/navbar.component';
 import { TypingRaceComponent } from './typing-race/typing-race.component';
 import { TypingPassageComponent } from './typing-passage/typing-passage.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TypingProgressComponent } from './typing-progress/typing-progress.component';
 import { TypingProgressBarComponent } from './typing-progress-bar/typing-progress-bar.component';
 
@@ -43,6 +43,7 @@ import { TypingProgressBarComponent } from './typing-progress-bar/typing-progres
     MatInputModule,
     MatIconModule,
     MatProgressBarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

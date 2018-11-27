@@ -1,20 +1,7 @@
 <div class="passage-card">
-  <h1 class="passage-title">
-    Bacon Ipsum
-  </h1>
-  <h2 class="passage-subtitle">
-    A Lorem ipsum parody.
-  </h2>
   <div class="passage-script">
     <p *ngFor="let paragraph of passage.split('\n')">
       {{paragraph}}
     </p>
-  </div>
-  <div class="row justify-content-end passage-actions">
-    <div class="col-auto">
-      <button mat-flat-button color="accent">LIKE</button>
-      <button mat-flat-button color="accent">SHARE</button>
-      <button mat-flat-button color="accent">SKIP</button>
-    </div>
   </div>
 </div>
