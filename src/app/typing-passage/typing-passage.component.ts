@@ -17,7 +17,7 @@ export class TypingPassageComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    const field: [] = changes.typingField.currentValue;
+    const field: String = changes.typingField.currentValue;
     if (field[field.length  - 1] !== ' ') {
       return;
     }
