@@ -1,6 +1,10 @@
 <div class="row align-items-center" #badgeContainer>
-  <div class="col-auto no-padding no-margin" #filler> </div>
-  <div class="col-auto" #badge>
-    <div class="box-pointer background-primary text-white-bold">{{name}}</div>
+  <div class="col-auto no-padding no-margin thick-bar"
+       [class.background-warn]="color == 'warn'"
+       [class.background-accent]="color == 'accent'"
+       [class.background-primary]="color == 'primary'"
+       #filler> </div>
+  <div class="col-auto badge-wrapper" #badge>
+    <div class="background-primary text-white-bold box-pointer">{{name}}</div>
   </div>
 </div>

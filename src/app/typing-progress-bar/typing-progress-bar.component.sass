@@ -1,21 +1,24 @@
 @import '~@angular/material/_theming.scss';
 @include mat-core();
-$badge-width: 60px
+$badge-width: 70px
 $app-primary: mat-palette($mat-deep-purple)
 $app-accent: mat-palette($mat-amber)
 $app-warn: mat-palette($mat-red)
 
 .thick-bar
-  height: 10px
+  height: 13px
 
 .box-pointer
   margin: 4px 0
   width: $badge-width
-  padding: 1px 0
-  border-radius: 3px
+  padding: 3px 0
+  border-radius: 5px
 
   //background-color: mat-color($app-warn, default)
   text-align: center
+
+.badge-wrapper
+  padding-left: 0
 
 .background-primary
   background-color: mat-color($app-primary, default)
@@ -28,5 +31,6 @@ $app-warn: mat-palette($mat-red)
 
 .text-white-bold
   color: white
-  font-weight: 900
+  font-weight: 500
+  letter-spacing: .1rem
 

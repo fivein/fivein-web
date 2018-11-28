@@ -11,6 +11,7 @@ export class TypingProgressBarComponent implements OnInit {
   @ViewChild('badge') badge: ElementRef;
   @Input() value: number;
   @Input() name: String;
+  @Input() color: String = 'warn';
   trackLength: number;
   badgeWidth: number;
   fillerLength: number;
@@ -20,6 +21,7 @@ export class TypingProgressBarComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('color', this.color);
     this.trackLength = this.badgeContainer.nativeElement.offsetWidth;
     this.badgeWidth = this.badge.nativeElement.offsetWidth;
     // this.fillerLength = (this.trackLength - this.badgeWidth); //(this.trackLength - this.badgeWidth)// * this.value / 100.0 as Number;
