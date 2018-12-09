@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
 import { NavMobileComponent } from './nav-mobile/nav-mobile.component';
 import { NavDesktopComponent } from './nav-desktop/nav-desktop.component';
 import { LoremIpsumComponent } from './lorem-ipsum/lorem-ipsum.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MaterialModule } from "./material/material.module";
+import { TypingRaceComponent } from './typing-race/typing-race.component';
 
 @NgModule({
   declarations: [
@@ -19,21 +20,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavMobileComponent,
     NavDesktopComponent,
     LoremIpsumComponent,
-    DashboardComponent
+    DashboardComponent,
+    TypingRaceComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    BrowserModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
