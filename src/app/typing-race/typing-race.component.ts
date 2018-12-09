@@ -11,25 +11,44 @@ export class TypingRaceComponent implements OnInit {
   typingControl: FormControl = new FormControl();
   typingFieldPlaceholder = 'Please wait until the race begins';
 
+  countdown: number;
+  startingTime: number = Date.now() + 5 * 1000;
+  timeLeft: number;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.styleTypingField();
     this.typingControl.disable();
+
+    this.countdown = setInterval(() => {
+      this.decrementCountdown();
+    }, 50);
+
     setTimeout(() => {
       this.startGame();
-    }, 2000);
+    }, this.startingTime - Date.now());
   }
 
-  private styleTypingField() {
+  private decrementCountdown(): void {
+    let left = this.startingTime - Date.now();
+    left -= left % 50;
+    this.timeLeft = Math.max(left, 0);
+    if (this.timeLeft <= 0) {
+      clearInterval(this.countdown);
+    }
+  }
+
+  private styleTypingField(): void {
     // setting top border of the input to 0
-    // no simpler way than js.
+    // no simpler way than JS
     const nativeElement = this.typingField.nativeElement;
     const wrapper = nativeElement.closest('.mat-form-field-infix');
     wrapper.style.borderTopWidth = 0;
   }
 
-  private startGame() {
+  private startGame(): void {
+    // start game sequence
     this.typingFieldPlaceholder = 'Lights out and away we go!';
     this.typingControl.enable();
     this.typingField.nativeElement.focus();
