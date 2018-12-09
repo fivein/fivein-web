@@ -1,0 +1,15 @@
+<div class="row align-items-center">
+  <div class="col-auto filler thick-bar"
+       [class.background-warn]="color == 'warn'"
+       [class.background-accent]="color == 'accent'"
+       [class.background-primary]="color == 'primary'"
+       [style.flexGrow]="value"
+       #leftFiller>
+  </div>
+  <div class="col-auto badge-wrapper">
+    <div class="box-pointer">{{name}}</div>
+  </div>
+  <div class="col-auto filler"
+       [style.flexGrow]="100 - value">
+  </div>
+</div>

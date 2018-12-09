@@ -10,8 +10,12 @@ import { NavMobileComponent } from './nav-mobile/nav-mobile.component';
 import { NavDesktopComponent } from './nav-desktop/nav-desktop.component';
 import { LoremIpsumComponent } from './lorem-ipsum/lorem-ipsum.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MaterialModule } from "./material/material.module";
+import { MaterialModule } from './material/material.module';
 import { TypingRaceComponent } from './typing-race/typing-race.component';
+import { PassageComponent } from './passage/passage.component';
+import { RaceStateComponent } from './race-state/race-state.component';
+import { RaceProgressBarComponent } from './race-progress-bar/race-progress-bar.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,6 +26,9 @@ import { TypingRaceComponent } from './typing-race/typing-race.component';
     LoremIpsumComponent,
     DashboardComponent,
     TypingRaceComponent,
+    PassageComponent,
+    RaceStateComponent,
+    RaceProgressBarComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -29,6 +36,7 @@ import { TypingRaceComponent } from './typing-race/typing-race.component';
     BrowserModule,
     LayoutModule,
     MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
