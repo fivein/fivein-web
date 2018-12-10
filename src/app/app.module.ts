@@ -16,6 +16,8 @@ import { PassageComponent } from './passage/passage.component';
 import { RaceStateComponent } from './race-state/race-state.component';
 import { RaceProgressBarComponent } from './race-progress-bar/race-progress-bar.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     PassageComponent,
     RaceStateComponent,
     RaceProgressBarComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     AppRoutingModule,

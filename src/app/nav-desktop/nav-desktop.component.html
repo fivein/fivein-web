@@ -1,8 +1,13 @@
 <mat-toolbar color="primary" class="mat-elevation-z3 nav">
   <button mat-flat-button color="primary" class="logotype" routerLink="">fivein</button>
-  <button mat-flat-button color="primary" routerLink="/dashboard">Dashboard</button>
+  <button mat-flat-button color="primary" routerLink="/dashboard"
+          matBadge="8" matBadgePosition="below after" matBadgeColor="accent">
+    Dashboard
+  </button>
   <button mat-flat-button color="primary" routerLink="/typing">Typing</button>
   <div class="full-width-spacer"></div>
-  <button mat-flat-button color="primary" routerLink="/typing">Typing</button>
+  <button mat-flat-button color="primary" routerLink="/typing">Login</button>
+  <button mat-flat-button color="primary" routerLink="/typing">Sign up</button>
+  <button mat-flat-button color="primary" routerLink="/typing">Logout</button>
 </mat-toolbar>
 <router-outlet></router-outlet>

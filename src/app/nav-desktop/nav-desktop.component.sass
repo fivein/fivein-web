@@ -1,13 +1,19 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber"
+
 .nav
   position: sticky
   top: 0
   z-index: 1
   height: 2.2em
   button
-    margin: 0 0.2em
+    margin: 0 0.4em
 
 .logotype
   font-size: 1.2em
 
 .full-width-spacer
   flex: 1 1 auto
+
+.mat-badge-content
+    @extend .mat-elevation-z3
+    z-index: 2
