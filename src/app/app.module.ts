@@ -4,46 +4,42 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatCardModule, MatChipsModule,
-  MatDividerModule, MatFormFieldControl, MatFormFieldModule,
-  MatIconModule, MatInputModule,
-  MatMenuModule, MatProgressBarModule,
-  MatToolbarModule
-} from '@angular/material';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { NavMobileComponent } from './nav-mobile/nav-mobile.component';
+import { NavDesktopComponent } from './nav-desktop/nav-desktop.component';
+import { LoremIpsumComponent } from './lorem-ipsum/lorem-ipsum.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MaterialModule } from './material/material.module';
 import { TypingRaceComponent } from './typing-race/typing-race.component';
-import { TypingPassageComponent } from './typing-passage/typing-passage.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TypingProgressComponent } from './typing-progress/typing-progress.component';
-import { TypingProgressBarComponent } from './typing-progress-bar/typing-progress-bar.component';
+import { PassageComponent } from './passage/passage.component';
+import { RaceStateComponent } from './race-state/race-state.component';
+import { RaceProgressBarComponent } from './race-progress-bar/race-progress-bar.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    NavComponent,
+    NavMobileComponent,
+    NavDesktopComponent,
+    LoremIpsumComponent,
+    DashboardComponent,
     TypingRaceComponent,
-    TypingPassageComponent,
-    TypingProgressComponent,
-    TypingProgressBarComponent
+    PassageComponent,
+    RaceStateComponent,
+    RaceProgressBarComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatChipsModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatProgressBarModule,
+    BrowserModule,
+    LayoutModule,
+    MaterialModule,
     ReactiveFormsModule,
   ],
   providers: [],

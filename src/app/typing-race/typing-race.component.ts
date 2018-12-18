@@ -1,11 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { PassageService } from '../passage.service';
-import { MatFormFieldControl } from '@angular/material';
 import { FormControl } from '@angular/forms';
-
-function sleep(ms: Number) {
-  return new Promise(resolve => setTimeout(resolve, ms as number));
-}
 
 @Component({
   selector: 'app-typing-race',
@@ -14,39 +8,49 @@ function sleep(ms: Number) {
 })
 export class TypingRaceComponent implements OnInit {
   @ViewChild('typingField') typingField: ElementRef;
-  typingFieldControl: FormControl = new FormControl('');
-  typingFieldPlaceholder: String = 'Please wait until the race begins';
+  typingControl: FormControl = new FormControl();
+  typingFieldPlaceholder = 'Please wait until the race begins';
 
-  passage: String = '';
+  countdown: number;
+  startingTime: number = Date.now() + 5 * 1000;
+  timeLeft: number;
 
-  constructor(private passageService: PassageService) {
-  }
+  constructor() { }
 
-  private static styleTypingField() {
-    const typingFormField = document.getElementsByClassName('typing-form-field')[0];
-    const infix = typingFormField.getElementsByClassName('mat-form-field-infix')[0] as HTMLElement;
-    infix.style.borderTopWidth = '8px';
-    infix.style.padding = '8px 0';
-  }
+  ngOnInit(): void {
+    this.styleTypingField();
+    this.typingControl.disable();
 
-  ngOnInit() {
-    TypingRaceComponent.styleTypingField();
-    this.typingFieldControl.disable();
-    this.getPassage();
+    this.countdown = setInterval(() => {
+      this.decrementCountdown();
+    }, 50);
 
-    // TODO: change this
     setTimeout(() => {
       this.startGame();
-    }, 2000);
+    }, this.startingTime - Date.now());
   }
 
-  getPassage() {
-    this.passage = this.passageService.getPassage();
+  private decrementCountdown(): void {
+    let left = this.startingTime - Date.now();
+    left -= left % 50;
+    this.timeLeft = Math.max(left, 0);
+    if (this.timeLeft <= 0) {
+      clearInterval(this.countdown);
+    }
   }
 
-  startGame() {
+  private styleTypingField(): void {
+    // setting top border of the input to 0
+    // no simpler way than JS
+    const nativeElement = this.typingField.nativeElement;
+    const wrapper = nativeElement.closest('.mat-form-field-infix');
+    wrapper.style.borderTopWidth = 0;
+  }
+
+  private startGame(): void {
+    // start game sequence
     this.typingFieldPlaceholder = 'Lights out and away we go!';
-    this.typingFieldControl.enable();
+    this.typingControl.enable();
     this.typingField.nativeElement.focus();
   }
 }
